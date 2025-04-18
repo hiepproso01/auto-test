@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "@faker-js/faker": "^9.7.0",
+    "@playwright/test": "^1.51.1",
+    "cypress": "^14.3.0",
+    "cypress-file-upload": "^5.0.8",
+    "exceljs": "^4.4.0",
+    "node-html-parser": "^7.0.1"
+  },
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "pw:test": "playwright test playwright-tests/test/add-employee.spec.js",
+    "pw:ui": "playwright test --ui  playwright-tests/test/add-employee.spec.js",
+    "pw:show-report": "playwright show-report",
+    "pw:generate-report": "playwright test --reporter=html"
+   
+  }
+}

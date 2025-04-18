@@ -10,6 +10,7 @@
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run",
+    "cy:run:v4": "cypress run --spec \"cypress/e2e/employee-management/add-employee-v4.cy.js\"",
     "pw:test": "playwright test playwright-tests/test/add-employee.spec.js",
     "pw:ui": "playwright test --ui  playwright-tests/test/add-employee.spec.js",
     "pw:show-report": "playwright show-report",

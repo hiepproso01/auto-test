@@ -133,41 +133,13 @@ describe('Chức năng thêm mới nhân viên', () => {
         cy.get('.ant-modal-content', { timeout: 10000 }).should('be.visible');
         cy.contains('Thông tin nhân viên').should('be.visible');
         
-        // // Nhấn vào nút "Ngừng làm việc"
-        // cy.contains('button', 'Ngừng làm việc').click();
-        // cy.wait(2000); // Đợi 2 giây để xác nhận hành động
-        // cy.contains('Xác nhận ngừng làm việc').should('be.visible');
-        // cy.contains('button', 'Đồng ý').click();
-        // cy.get('.ant-message-success', { timeout: 5000 }).should('be.visible');
-       // Kiểm tra và xử lý tùy thuộc vào nút nào tồn tại
-  cy.get('body').then($body => {
-    // Kiểm tra nếu nút "Ngừng làm việc" tồn tại
-    if ($body.find('button:contains("Ngừng làm việc")').length > 0) {
-      // Xử lý khi nhân viên đang làm việc
-      cy.contains('button', 'Ngừng làm việc').click();
-      cy.wait(2000);
-      cy.contains('Xác nhận ngừng làm việc').should('be.visible');
-      cy.contains('button', 'Đồng ý').click();
-      cy.get('.ant-message-success', { timeout: 5000 }).should('be.visible');
-    } 
-    // Kiểm tra nếu nút "Quay lại làm việc" tồn tại
-    else if ($body.find('button:contains("Quay lại làm việc")').length > 0) {
-      // Xử lý khi nhân viên đã nghỉ
-      cy.contains('button', 'Quay lại làm việc').click();
-      cy.wait(2000);
-      cy.contains('Xác nhận quay lại làm việc').should('be.visible');
-      cy.contains('button', 'Đồng ý').click();
-      cy.get('.ant-message-success', { timeout: 5000 }).should('be.visible');
-    }
-    // Trường hợp không tìm thấy nút nào
-    else {
-      cy.log('Không tìm thấy nút thay đổi trạng thái làm việc trong modal');
-    }
-  });
-  
-  // Đóng modal chi tiết sau khi hoàn thành
-  cy.get('.ant-modal-close').click({ multiple: true, force: true });
-  cy.wait(2000);
+        // Nhấn vào nút "Ngừng làm việc"
+        cy.contains('button', 'Ngừng làm việc').click();
+        cy.wait(2000); // Đợi 2 giây để xác nhận hành động
+        cy.contains('Xác nhận ngừng làm việc').should('be.visible');
+        cy.contains('button', 'Đồng ý').click();
+        cy.get('.ant-message-success', { timeout: 5000 }).should('be.visible');
+       
       });
    
 

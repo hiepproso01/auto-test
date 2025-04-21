@@ -6,7 +6,9 @@ module.exports = defineConfig({
     experimentalWebKitSupport: true, // Hỗ trợ WebKit cho các trình duyệt như Safari
     baseUrl: 'http://localhost:5173/', // URL của ứng dụng Arena Admin Web
     setupNodeEvents(on, config) {
-      // Các cấu hình event nếu cần
+      config.env = config.env || {};
+      config.env.apiUrl = 'https://dev-arena4club-api.arenabilliard.com';
+      return config;
     },
   },
   viewportWidth: 1280,

@@ -1,0 +1,2 @@
+File này là dùng để test trường hợp upload ảnh 
+nhưng chọn file khác không phải định dạng image

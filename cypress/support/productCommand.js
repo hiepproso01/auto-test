@@ -6,6 +6,7 @@ Cypress.Commands.add('generateRandomProcessedProduct', () => {
     name: `${faker.commerce.productName()}`,
     code: `SP${faker.string.numeric(6)}`,
     price: faker.number.int({ min: 10000, max: 500000 }),
+    demical: faker.number.float({ min: 0, max: 1, precision: 0.01 }),
     description: faker.lorem.sentence(),
     isProcessed: true,
     ingredients: [

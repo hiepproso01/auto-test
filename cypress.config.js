@@ -1,7 +1,8 @@
 const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
-  projectId: 'eipvxm',
+  // projectId: 'eipvxm',
+  projectId:'5npuu4',
   e2e: {
     experimentalWebKitSupport: true, // Hỗ trợ WebKit cho các trình duyệt như Safari
     baseUrl: 'http://localhost:5173/', // URL của ứng dụng Arena Admin Web
@@ -11,6 +12,7 @@ module.exports = defineConfig({
       return config;
     },
   },
+  scrollBehavior: false,  // Hoặc 'center', 'top', 'bottom', 'nearest'
   viewportWidth: 1280,
   viewportHeight: 800,
   defaultCommandTimeout: 10000, // Tăng timeout vì có thể có API gọi chậm

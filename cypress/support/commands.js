@@ -1,5 +1,5 @@
 // Command đăng nhập (nếu cần)
-Cypress.Commands.add('login', (branch="arena", username = 'nhanvien1', password = '123456') => {
+Cypress.Commands.add('login', (branch="arena", username = 'admin', password = '123456') => {
   cy.session([branch, username, password], () => {
     cy.visit('/signin');
     cy.get('form').should('be.visible', { timeout: 10000 });

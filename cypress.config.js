@@ -13,8 +13,8 @@ module.exports = defineConfig({
     },
   },
   scrollBehavior: false,  // Hoặc 'center', 'top', 'bottom', 'nearest'
-  viewportWidth: 1280,
-  viewportHeight: 800,
+  viewportWidth: 1440,
+  viewportHeight: 900,
   defaultCommandTimeout: 10000, // Tăng timeout vì có thể có API gọi chậm
   chromeWebSecurity: false, // Nếu cần test trên các domain khác nhau
   experimentalCloudSupport: true,

@@ -23,3 +23,36 @@ Cypress.Commands.add('generateRandomProcessedProduct', () => {
     ]
   };
 });
+
+Cypress.Commands.add('generateRandomVoucher', () => {
+  const daysOfWeek = ['Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy', 'Chủ Nhật'];
+  const dayOfWeekVoucher = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
+  const dayToId = {
+    'T2': 'Monday',
+    'T3': 'Tuesday',
+    'T4': 'Wednesday',
+    'T5': 'Thursday',
+    'T6': 'Friday',
+    'T7': 'Saturday',
+    'CN': 'Sunday'
+  };
+   const numberOfDays = faker.number.int({ min: 2, max: 4 });
+   let selectedDays = [...dayOfWeekVoucher]
+     .sort(() => 0.5 - Math.random()) // Xáo trộn ngẫu nhiên
+     .slice(0, numberOfDays) // Lấy số lượng cần thiết
+     .map(day => ({
+       day,
+       id: `issued${dayToId[day]}Quantity`, // ID của input
+       quantity: faker.number.int({ min: 10, max: 50 }) // Số lượng random cho mỗi ngày
+     }));
+  return{
+    code: `MA-GIAM-GIA-${faker.string.numeric(6)}`,
+    name: `Mã giảm giá tự động ${faker.string.numeric(6)}`,
+    maxDiscount: faker.number.int({ min: 10000, max: 500000 }),
+    quantity: faker.number.int({ min: 1, max: 100 }),
+    price: faker.number.int({ min: 10000, max: 500000 }),
+    randomDay: daysOfWeek[Math.floor(Math.random() * daysOfWeek.length)],
+    randomDayVoucher: dayOfWeekVoucher[Math.floor(Math.random() * dayOfWeekVoucher.length)],
+    selectedDays: selectedDays
+  }
+});

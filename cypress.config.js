@@ -4,6 +4,7 @@ module.exports = defineConfig({
   // projectId: 'eipvxm',
   projectId:'5npuu4',
   e2e: {
+    
     experimentalWebKitSupport: true, // Hỗ trợ WebKit cho các trình duyệt như Safari
     baseUrl: 'http://localhost:5173/', // URL của ứng dụng Arena Admin Web
     setupNodeEvents(on, config) {
